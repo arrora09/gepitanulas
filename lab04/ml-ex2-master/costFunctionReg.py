@@ -24,7 +24,7 @@ def costFunctionReg(theta, X, y, _lambda):
     y_pred = sigmoid(X.dot(theta))
     J = sum(-y * log(y_pred) - (1 - y) * log(1 - y_pred)) / m
 
-    reg = sum(theta[1:] ** 2 / (_lambda / 2 * m))
+    reg = sum(theta[1:] ** 2) / (_lambda / 2 * m)
     J += reg
 
     grad = (X.T.dot(y_pred - y)) / m
